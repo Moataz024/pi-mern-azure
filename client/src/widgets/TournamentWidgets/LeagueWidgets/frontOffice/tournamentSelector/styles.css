@@ -1,0 +1,36 @@
+.tournament-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #FDCA40;
+  margin-bottom: 10px;
+}
+
+.tournament-content {
+  display: flex;
+  align-items: center;
+}
+
+.tournament-logo {
+  width: 50px; /* Ajustez la largeur de l'image selon vos besoins */
+  height: 50px; /* Ajustez la hauteur de l'image selon vos besoins */
+  margin-right: 10px; /* Espacement entre l'image et le titre */
+}
+
+.tournament-title {
+  margin: 0;
+}
+
+.tournament.button {
+  background-color: #FDCA40;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tournament.button:hover {
+  background-color: #FBBF24;
+}
