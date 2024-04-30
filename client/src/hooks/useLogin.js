@@ -15,7 +15,7 @@ export const useLogin = () => {
         setIsLoading(true)
         setError('')
 
-        const response = await fetch('http://localhost:3000/User/login', {
+        const response = await fetch('https://link-up-tournament.azurewebsites.net/User/login', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ email, password })

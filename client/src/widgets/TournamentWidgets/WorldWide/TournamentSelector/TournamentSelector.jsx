@@ -45,7 +45,7 @@ const renderLeagues = () => {
   useEffect(() => {
     const fetchTournaments = async () => {
       try {
-        const response = await fetch('http://localhost:3000/Tournament/getall');
+        const response = await fetch('https://link-up-tournament.azurewebsites.net/Tournament/getall');
         const data = await response.json();
         setTournaments(data);
       } catch (error) {

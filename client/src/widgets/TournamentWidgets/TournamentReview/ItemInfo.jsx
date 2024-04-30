@@ -20,7 +20,7 @@ const ItemInfo = ({id, value}) => {
     useEffect(() => {
         const fetchTeamDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/Team/getbyid/${id}`);
+                const response = await fetch(`https://link-up-tournament.azurewebsites.net/Team/getbyid/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch team details');
                 }

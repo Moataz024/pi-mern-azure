@@ -33,7 +33,7 @@ const CreateTournament = () => {
                 return;
             }
 
-            const response = await fetch('http://localhost:3000/Tournament/add', {
+            const response = await fetch('https://link-up-tournament.azurewebsites.net/Tournament/add', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

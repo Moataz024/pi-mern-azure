@@ -15,7 +15,7 @@ const RefNStaduim = ({variant = 'main', match}) => {
     useEffect(() => {
         const fetchStadium = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/Stadium/getbyid/${match.stadium}`);
+                const response = await fetch(`https://link-up-tournament.azurewebsites.net/Stadium/getbyid/${match.stadium}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch Stadium');
                 }
@@ -34,7 +34,7 @@ const RefNStaduim = ({variant = 'main', match}) => {
     useEffect(() => {
         const fetchreferee = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/User/getbyid/${match._ref}`);
+                const response = await fetch(`https://link-up-tournament.azurewebsites.net/User/getbyid/${match._ref}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch referee');
                 }

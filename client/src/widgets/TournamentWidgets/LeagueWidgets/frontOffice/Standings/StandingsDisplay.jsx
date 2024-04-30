@@ -13,7 +13,7 @@ const StandingsDisplay = ({ selectedTournamentId }) => {
     const fetchTournamentDetails = async () => {
       try {
         if (selectedTournamentId) {
-          const response = await fetch(`http://localhost:3000/Tournament/getbyid/${selectedTournamentId}`);
+          const response = await fetch(`https://link-up-tournament.azurewebsites.net/Tournament/getbyid/${selectedTournamentId}`);
           if (!response.ok) {
             throw new Error('Failed to fetch tournament details');
           }
@@ -32,7 +32,7 @@ const StandingsDisplay = ({ selectedTournamentId }) => {
     const fetchStandings = async () => {
       try {
         if (tournament._id) {
-          const response = await fetch(`http://localhost:3000/Standings/GetByTournament/${tournament._id}`);
+          const response = await fetch(`https://link-up-tournament.azurewebsites.net/Standings/GetByTournament/${tournament._id}`);
           if (!response.ok) {
             throw new Error('Failed to fetch standings data');
           }
@@ -63,7 +63,7 @@ const StandingsDisplay = ({ selectedTournamentId }) => {
   // Function to fetch team data
   const fetchTeamData = async (teamId) => {
     try {
-      const response = await fetch(`http://localhost:3000/Team/getbyid/${teamId}`);
+      const response = await fetch(`https://link-up-tournament.azurewebsites.net/Team/getbyid/${teamId}`);
       if (!response.ok) {
         throw new Error('Failed to fetch team data');
       }

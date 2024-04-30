@@ -25,7 +25,7 @@ const Tickets = () => {
           console.log("Error: Player ID not found");
         } else {
           try {
-            const response = await fetch(`http://localhost:3000/User/getbyid/${playerId}`);
+            const response = await fetch(`https://link-up-tournament.azurewebsites.net/User/getbyid/${playerId}`);
             const data = await response.json();
             setTeamId(data?.currentTeam);
             setIsLoading(false);

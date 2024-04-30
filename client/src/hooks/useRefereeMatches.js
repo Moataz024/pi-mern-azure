@@ -10,7 +10,7 @@ export const useRefereeMatches = () => {
     const findMatches = async () => {
         setIsLoading(true)
         setError('')
-        const response = await fetch(`http://localhost:3000/Match/ref-matches`, {
+        const response = await fetch(`https://link-up-tournament.azurewebsites.net/Match/ref-matches`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ const TimeMatch = ({matchID,matchStart, setMatchStart }) => {
   useEffect(() => {
     const fetchTournamentDetails = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/Tournament/getTournamentBymatch/${matchID}`);
+            const response = await fetch(`https://link-up-tournament.azurewebsites.net/Tournament/getTournamentBymatch/${matchID}`);
             if (!response.ok) {
                 throw new Error('Failed to fetch tournament details');
             }
@@ -41,7 +41,7 @@ const TimeMatch = ({matchID,matchStart, setMatchStart }) => {
       setMatchTime({ minutes, seconds });
     }, 1000);
     try {
-      const response = await axios.post('http://localhost:3000/result/results', {
+      const response = await axios.post('https://link-up-tournament.azurewebsites.net/result/results', {
         matchId: matchID // Replace with actual match ID if available
       });
       console.log('Result state initiated:', response.data);
@@ -87,18 +87,18 @@ const TimeMatch = ({matchID,matchStart, setMatchStart }) => {
       let endpoint;
       switch (tournament.TournamentType) {
           case 'League':
-              endpoint = `http://localhost:3000/Standings/upadteStandings/${matchID}`;
+              endpoint = `https://link-up-tournament.azurewebsites.net/Standings/upadteStandings/${matchID}`;
               break;
           case 'Knockout':
-              endpoint = `http://localhost:3000/Tournament/UpdateTournamentKnockout/${tournament._id}/${matchID}`;
+              endpoint = `https://link-up-tournament.azurewebsites.net/Tournament/UpdateTournamentKnockout/${tournament._id}/${matchID}`;
               break;
           case 'Championship':
               
           if(tournament.GPended=== false){
-          endpoint = `http://localhost:3000/Tournament/UpdateGroupStandingAfterMatch/${matchID}`;
+          endpoint = `https://link-up-tournament.azurewebsites.net/Tournament/UpdateGroupStandingAfterMatch/${matchID}`;
           }
           else {
-          endpoint  = `http://localhost:3000/Tournament/UpdateTournamentKnockout/${tournament._id}/${matchID}`;
+          endpoint  = `https://link-up-tournament.azurewebsites.net/Tournament/UpdateTournamentKnockout/${tournament._id}/${matchID}`;
           }break;
           default:
               throw new Error('Invalid tournament type');

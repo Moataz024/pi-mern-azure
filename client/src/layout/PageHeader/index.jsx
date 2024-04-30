@@ -71,18 +71,18 @@ const DesktopHeader = ({title}) => {
         const fetchNotifications = async () => {
             try {
                 if (USER && USER.email === 'moatazfoudhaily@gmail.com') {
-                    const responsecomplaint = await axios.get(`http://localhost:3000/api/AllComplaints`);
+                    const responsecomplaint = await axios.get(`https://link-up-tournament.azurewebsites.net/api/AllComplaints`);
                     if (responsecomplaint.data && Array.isArray(responsecomplaint.data.complaints)) {
                         const filteredComplaints = responsecomplaint.data.complaints.filter(complaint => complaint.adminResponse === "");
                         setNotifications(filteredComplaints);
                         setNotificationCount(filteredComplaints.length);
                     }
                 } else if (USER) {
-                    const userResponse = await axios.get(`http://localhost:3000/User/getbyemail?email=${USER.email}`);
+                    const userResponse = await axios.get(`https://link-up-tournament.azurewebsites.net/User/getbyemail?email=${USER.email}`);
                     const userId = userResponse.data._id;
-                    const response = await axios.get(`http://localhost:3000/Notification/getByUserId/${userId}`);
+                    const response = await axios.get(`https://link-up-tournament.azurewebsites.net/Notification/getByUserId/${userId}`);
                     setNotifications(response.data);
-                    const countResponse = await axios.get(`http://localhost:3000/Notification/getNotificationCountByUserId/${userId}`);
+                    const countResponse = await axios.get(`https://link-up-tournament.azurewebsites.net/Notification/getNotificationCountByUserId/${userId}`);
                     setNotificationCount(countResponse.data.notificationCount);
                 }
             } catch (error) {

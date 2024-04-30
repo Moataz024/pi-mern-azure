@@ -71,11 +71,11 @@ const teamId = state ? state.teamId : null;
                 
                 let teamDataResponse;
                 if (!teamId) {
-                    const userResponse = await axios.get(`http://localhost:3000/User/getbyemail?email=${USER.email}`);
+                    const userResponse = await axios.get(`https://link-up-tournament.azurewebsites.net/User/getbyemail?email=${USER.email}`);
                     const userId = userResponse.data._id;
-                    teamDataResponse = await fetch(`http://localhost:3000/Team/getTeambyTeamManger/${userId}`);
+                    teamDataResponse = await fetch(`https://link-up-tournament.azurewebsites.net/Team/getTeambyTeamManger/${userId}`);
                 } else {
-                    teamDataResponse = await fetch(`http://localhost:3000/Team/getbyid/${teamId}`);
+                    teamDataResponse = await fetch(`https://link-up-tournament.azurewebsites.net/Team/getbyid/${teamId}`);
                 }
     
                 const teamData = await teamDataResponse.json();
@@ -101,7 +101,7 @@ const teamId = state ? state.teamId : null;
             }
     
             // Proceed with removal if user confirms
-            const response = await axios.delete(`http://localhost:3000/Team/removePlayerFromTeam?idPlayer=${playerId}`);
+            const response = await axios.delete(`https://link-up-tournament.azurewebsites.net/Team/removePlayerFromTeam?idPlayer=${playerId}`);
             toast.success(name + ' has been successfully removed from the team!');
             return response.data; // Return any data returned by the backend
         } catch (error) {

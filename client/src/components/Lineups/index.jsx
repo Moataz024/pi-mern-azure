@@ -23,7 +23,7 @@ const Lineups = ({data = data.players, wrapperClass, withField, isCompact}) => {
                 setPlayers(playersData); */
 
 
-                const CheckResponse = await fetch(`http://localhost:3000/User/getPlayersByIds/${playerIds}`, {
+                const CheckResponse = await fetch(`https://link-up-tournament.azurewebsites.net/User/getPlayersByIds/${playerIds}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'

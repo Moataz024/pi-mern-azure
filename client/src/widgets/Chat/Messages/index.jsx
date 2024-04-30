@@ -29,7 +29,7 @@ const Messages = () => {
     const selectedChat = useSelector(state => state.chats.chats.find(chat => chat._id === selectedChatId));
     let socket;
     try{
-         socket = io('http://localhost:3000', { transports : ['websocket'] });
+         socket = io('https://link-up-tournament.azurewebsites.net', { transports : ['websocket'] });
     }catch(error){
         console.log("Socket couldn't connect, ERROR:",error.message)
     }

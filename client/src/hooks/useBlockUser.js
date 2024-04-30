@@ -9,7 +9,7 @@ export const useBlockUser = () => {
         setLoading(true)
         setError('')
 
-        const response = await fetch('http://localhost:3000/User/toggle-block', {
+        const response = await fetch('https://link-up-tournament.azurewebsites.net/User/toggle-block', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

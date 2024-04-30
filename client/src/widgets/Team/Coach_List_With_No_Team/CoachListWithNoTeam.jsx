@@ -26,10 +26,10 @@ const CoachListWithNoTeam = () => {
 
     const addNewPlayer = async ( newPlayerData) => {
         //console.log(newPlayerData+"-----------")
-        const userResponse = await axios.get(`http://localhost:3000/User/getbyemail?email=${USER.email}`);
+        const userResponse = await axios.get(`https://link-up-tournament.azurewebsites.net/User/getbyemail?email=${USER.email}`);
         const userId = userResponse.data._id;
         try {
-            const response = await fetch(`http://localhost:3000/Team/addCoachToTeam/${userId}`, {
+            const response = await fetch(`https://link-up-tournament.azurewebsites.net/Team/addCoachToTeam/${userId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -49,7 +49,7 @@ const CoachListWithNoTeam = () => {
     useEffect(() => {
         async function fetchPlayerData() {
             try {
-                const response = await fetch(`http://localhost:3000/User/getallCoachesWithNoTeam`);
+                const response = await fetch(`https://link-up-tournament.azurewebsites.net/User/getallCoachesWithNoTeam`);
                 const data = await response.json();
                 setPlayerData(data);
             } catch (error) {

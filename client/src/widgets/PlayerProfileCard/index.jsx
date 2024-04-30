@@ -31,11 +31,11 @@ const PlayerProfileCard = () => {
 
     useEffect(() => {
         async function fetchTeamData() {
-                /* const userResponse = await axios.get(`http://localhost:3000/User/getbyemail?email=${USER.email}`);
+                /* const userResponse = await axios.get(`https://link-up-tournament.azurewebsites.net/User/getbyemail?email=${USER.email}`);
                 const userId = userResponse.data._id;
                 setUserData(userId)
 
-                const CheckResponse = await fetch(`http://localhost:3000/User/checkLiked/${playerId}/${userId}`, {
+                const CheckResponse = await fetch(`https://link-up-tournament.azurewebsites.net/User/checkLiked/${playerId}/${userId}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ const PlayerProfileCard = () => {
                 setCheckData(data); */
 
             try {
-                const response = await fetch(`http://localhost:3000/Team/getbyid/${playerData.currentTeam}`);
+                const response = await fetch(`https://link-up-tournament.azurewebsites.net/Team/getbyid/${playerData.currentTeam}`);
                 const data = await response.json();
                 setTeamData(data);
                 //console.log(data)
@@ -60,7 +60,7 @@ const PlayerProfileCard = () => {
 
         async function fetchplayerData() {
             try {
-                const response = await fetch(`http://localhost:3000/User/getbyid/${playerId}`); // team manger id 
+                const response = await fetch(`https://link-up-tournament.azurewebsites.net/User/getbyid/${playerId}`); // team manger id
                 const data = await response.json();
 
                 console.log("DDDD",data)
@@ -73,9 +73,9 @@ const PlayerProfileCard = () => {
 
         async function fetchLikes() {
             try {
-                const userResponse = await axios.get(`http://localhost:3000/User/getbyemail?email=${USER.email}`);
+                const userResponse = await axios.get(`https://link-up-tournament.azurewebsites.net/User/getbyemail?email=${USER.email}`);
                 const userId = userResponse.data._id;
-                const CheckResponse = await fetch(`http://localhost:3000/User/checkLiked/${playerId}/${userId}`, {
+                const CheckResponse = await fetch(`https://link-up-tournament.azurewebsites.net/User/checkLiked/${playerId}/${userId}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'

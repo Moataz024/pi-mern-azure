@@ -24,11 +24,11 @@ const TeamPlayerOverview = () => {
 
         async function fetchUserData() {
             try {
-                const userResponse =await fetch(`http://localhost:3000/User/getbyid/${playerId}`) ;
+                const userResponse =await fetch(`https://link-up-tournament.azurewebsites.net/User/getbyid/${playerId}`) ;
                 const userData = await userResponse.json();
                 setUserData(userData);
 
-                const teamResponse =await fetch(`http://localhost:3000/Team/getbyid/${userData.currentTeam}`) ;
+                const teamResponse =await fetch(`https://link-up-tournament.azurewebsites.net/Team/getbyid/${userData.currentTeam}`) ;
                 const teamData = await teamResponse.json();
                 setTeamData(teamData);
             } catch (error) {

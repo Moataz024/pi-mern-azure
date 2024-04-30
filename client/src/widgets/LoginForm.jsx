@@ -108,7 +108,7 @@ const LoginForm = () => {
             <br/>
             <br/>
             <div >
-                <form className="d-flex justify-content-center align-items-end" action="http://localhost:3000/auth/google" >
+                <form className="d-flex justify-content-center align-items-end" action="https://link-up-tournament.azurewebsites.net/auth/google" >
                     <button className="btn justify-content-between">
                         <p>Sign in with</p> <span><FcGoogle /></span>
                     </button></form>

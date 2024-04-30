@@ -26,7 +26,7 @@ export const TeamLineupManager = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const userResponse = await axios.get(`http://localhost:3000/User/getbyemail?email=${USER.email}`);
+      const userResponse = await axios.get(`https://link-up-tournament.azurewebsites.net/User/getbyemail?email=${USER.email}`);
       const userId = userResponse.data._id;
       //console.log(userId+"-/-/-/-/-/-/-/-/")
       const team = await getTeamByCoach(userId);// *------------change this id userId 
@@ -70,9 +70,9 @@ export const TeamLineupManager = () => {
 
   const getLineup = async () => {
     try {
-      const userResponse = await axios.get(`http://localhost:3000/User/getbyemail?email=${USER.email}`);
+      const userResponse = await axios.get(`https://link-up-tournament.azurewebsites.net/User/getbyemail?email=${USER.email}`);
       const userId = userResponse.data.currentTeam;
-      const response = await fetch(`http://localhost:3000/Team/getLineup/${userId}`);
+      const response = await fetch(`https://link-up-tournament.azurewebsites.net/Team/getLineup/${userId}`);
       const lineupData = await response.json();
   
       console.log("Lineup Data:", lineupData); // Log the entire lineup data object
@@ -152,7 +152,7 @@ export const TeamLineupManager = () => {
 
   const getTeamByCoach = async (coachId) => {
     try {
-      const response = await fetch(`http://localhost:3000/Team/getTeambyCoach/${coachId}`);
+      const response = await fetch(`https://link-up-tournament.azurewebsites.net/Team/getTeambyCoach/${coachId}`);
       const data = await response.json();
       //console.log(data)
       return data;
@@ -173,12 +173,12 @@ export const TeamLineupManager = () => {
       const playerIds = players.map(player => player.id);
   
         // Check if the team has a lineup saved
-      const userResponse = await axios.get(`http://localhost:3000/User/getbyemail?email=${USER.email}`);
+      const userResponse = await axios.get(`https://link-up-tournament.azurewebsites.net/User/getbyemail?email=${USER.email}`);
       const userId = userResponse.data.currentTeam;
-      const response = await fetch(`http://localhost:3000/Team/getLineup/${userId}`);
+      const response = await fetch(`https://link-up-tournament.azurewebsites.net/Team/getLineup/${userId}`);
       const existingLineup = await response.json();
       if(existingLineup.success==true){
-        const updateResponse = await fetch(`http://localhost:3000/Team/updateLineup/${userId}`, {
+        const updateResponse = await fetch(`https://link-up-tournament.azurewebsites.net/Team/updateLineup/${userId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
@@ -192,7 +192,7 @@ export const TeamLineupManager = () => {
         console.log('Lineup updated:', updatedLineup);
       }
       else{
-      const response = await fetch('http://localhost:3000/Team/addLineup/', {
+      const response = await fetch('https://link-up-tournament.azurewebsites.net/Team/addLineup/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

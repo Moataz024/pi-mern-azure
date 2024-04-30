@@ -40,7 +40,7 @@ const LineupSchema = new Schema({
           },
           avatar:{
             type:String,
-            default:"http://localhost:3000/placeholder.webp"
+            default:"https://link-up-tournament.azurewebsites.net/placeholder.webp"
         },
         }
       ]

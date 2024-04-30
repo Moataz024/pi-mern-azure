@@ -16,7 +16,7 @@ export const useFindUserTour = () => {
         try {
             let response 
             if(!userId){
-                response = await fetch('http://localhost:3000/User/player-tournaments', {
+                response = await fetch('https://link-up-tournament.azurewebsites.net/User/player-tournaments', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -25,9 +25,9 @@ export const useFindUserTour = () => {
                 });
             }else {
                 let UserDataResponse ;
-                UserDataResponse = await fetch(`http://localhost:3000/User/getbyid/${userId}`);
+                UserDataResponse = await fetch(`https://link-up-tournament.azurewebsites.net/User/getbyid/${userId}`);
                 const userData = await UserDataResponse.json();
-                 response = await fetch(`http://localhost:3000/User/player-tournaments?userId=${userId}`, {
+                 response = await fetch(`https://link-up-tournament.azurewebsites.net/User/player-tournaments?userId=${userId}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ export const useFindUserTour = () => {
     const findTeams = async (tournament) => {
         setIsLoading(true)
         setError('')
-        const response = await fetch(`http://localhost:3000/User/player-teams/${tournament._id}`, {
+        const response = await fetch(`https://link-up-tournament.azurewebsites.net/User/player-teams/${tournament._id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ export default function BasicRating({selectedTournamentId}) {
     setValue(newValue);
     
     try {
-      const response = await fetch(`http://localhost:3000/Tournament/addRate/${selectedTournamentId}`, {
+      const response = await fetch(`https://link-up-tournament.azurewebsites.net/Tournament/addRate/${selectedTournamentId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

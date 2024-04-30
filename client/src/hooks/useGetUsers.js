@@ -13,7 +13,7 @@ export const useGetUsers = () => {
         setIsLoading(true)
         setError('')
 
-        const response = await fetch('http://localhost:3000/User/getall', {
+        const response = await fetch('https://link-up-tournament.azurewebsites.net/User/getall', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

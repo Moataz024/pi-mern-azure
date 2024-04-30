@@ -20,10 +20,10 @@ const ComplaintSettings = () => {
 
   const handleComplaintSubmit = async () => {
     try {
-      const userResponse = await axios.get(`http://localhost:3000/User/getbyemail?email=${USER.email}`);
+      const userResponse = await axios.get(`https://link-up-tournament.azurewebsites.net/User/getbyemail?email=${USER.email}`);
       const userId = userResponse.data._id;
 
-      const response = await axios.post('http://localhost:3000/api/complaints', {
+      const response = await axios.post('https://link-up-tournament.azurewebsites.net/api/complaints', {
         userId,
         title: complaintTitle,
         description: complaintDescription,

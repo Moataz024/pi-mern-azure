@@ -16,7 +16,7 @@ export const useFindUserChats = () => {
         setIsLoading(true)
         setError('')
 
-        const response = await fetch('http://localhost:3000/Chat/', {
+        const response = await fetch('https://link-up-tournament.azurewebsites.net/Chat/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

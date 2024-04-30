@@ -14,7 +14,7 @@ export const useCreateStream = () => {
         setIsLoading(true)
         setError('')
 
-        const response = await fetch('http://localhost:3000/stream', {
+        const response = await fetch('https://link-up-tournament.azurewebsites.net/stream', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ export const useCreateStream = () => {
                     roomName,
                     roomUrl : room.url
                 }
-                const createStreamResponse = await fetch('http://localhost:3000/stream',{
+                const createStreamResponse = await fetch('https://link-up-tournament.azurewebsites.net/stream',{
                     method:'POST',
                     headers:{
                         'authorization': `Bearer ${organizerToken}`,

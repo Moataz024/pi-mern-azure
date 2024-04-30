@@ -54,7 +54,7 @@ const TournamentsTypes = () => {
     useEffect(() => {
         const fetchTournaments = async () => {
             try {
-                const response = await fetch('http://localhost:3000/Tournament/getall');
+                const response = await fetch('https://link-up-tournament.azurewebsites.net/Tournament/getall');
                 if (!response.ok) {
                     throw new Error('Failed to fetch tournaments');
                 }
