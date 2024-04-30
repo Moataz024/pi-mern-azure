@@ -121,8 +121,8 @@ app.use("/Match", MatchRouter);
 
 // Server setup
 app.use("/result",ResultRouter);
-const server=http.createServer(app);
-const io=require("socket.io")(server);
+app.listen(3000,console.log('Listening on 3000'))
+const io=require("socket.io")(app);
 chatSocket=io;
 // Generate network avatars
 app.use('/uploads/avatar', express.static('uploads/avatar'));
@@ -133,7 +133,7 @@ app.use('/uploads/avatar', express.static('uploads/avatar'));
 app.use('/uploads/team', express.static('uploads/team'));
 
 // Database connection
-server.listen(3000,console.log("server is running"))
+// server.listen(3000,console.log("server is running"))
   mongo.connect(config.url ,{
       useUnifiedTopology:true,
       useNewUrlParser:true,
