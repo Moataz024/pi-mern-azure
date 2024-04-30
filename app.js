@@ -36,7 +36,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(passport.initialize());
 require("./auth/google-auth")(passport);
 
-app.use("/", googleAuth);
+app.use("/google", googleAuth);
 
 // Routes
 const streamRoutes = require("./routes/Stream");
@@ -72,7 +72,7 @@ const Payment = require("./models/Payment");
 app.use("/api", ComplaintRouter);
 
 app.use(express.static("./client/build"));
-app.get("*",(req,res)=>{
+app.get("/front/*",(req,res)=>{
     res.sendFile(path.resolve(__dirname,"client","build","index.html"));
 })
 
