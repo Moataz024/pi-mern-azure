@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkliga_soccer=self.webpackChunkliga_soccer||[]).push([[4217],{86598:(e,n,s)=>{s.r(n),s.d(n,{default:()=>r});var a=s(27937),c=(s(27565),s(27929));const r=()=>(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)(a.A,{title:"Manage your tournament"}),(0,c.jsx)("div",{children:"KnockoutTournamentBuild"})]})}}]);
-//# sourceMappingURL=4217.6c6f26c0.chunk.js.map

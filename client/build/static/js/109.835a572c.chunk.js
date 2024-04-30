@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkliga_soccer=self.webpackChunkliga_soccer||[]).push([[109],{84273:(s,e,c)=>{c(27929)},60109:(s,e,c)=>{c.r(e),c.d(e,{default:()=>t});var a=c(91679),l=(c(84273),c(27565),c(27937)),r=c(27929);const t=()=>(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(l.A,{title:" Teams Linup"}),(0,r.jsx)(a.B,{})]})}}]);
-//# sourceMappingURL=109.835a572c.chunk.js.map

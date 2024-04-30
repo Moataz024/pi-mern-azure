@@ -1,9 +1,6 @@
 const path = require('path');
 
 module.exports = {
-    devServer: {
-        port: 3001,
-    },
     webpack: {
         eslint: {
             enable: false,
