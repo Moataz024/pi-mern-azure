@@ -72,7 +72,7 @@ const ComplaintRouter = require("./routes/Complaint");
 const Payment = require("./models/Payment");
 app.use("/api", ComplaintRouter);
 
-app.use(express.static("./client/build"));
+app.use(express.static("./client"));
 app.get("*",(req,res)=>{
     res.sendFile(path.resolve(__dirname,"client","build","index.html"));
 })
