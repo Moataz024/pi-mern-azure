@@ -2,7 +2,7 @@ const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 require('dotenv').config();
 const mailer = require('../config/nodemailer');
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const asyncHandler = require('express-async-handler')
 const templateMail = require('../config/templateMail.js');
 const RoleRequest = require('../models/RoleRequest')
